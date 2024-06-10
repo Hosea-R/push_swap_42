@@ -6,7 +6,7 @@
 /*   By: mrazanad <mrazanad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 10:02:35 by mrazanad          #+#    #+#             */
-/*   Updated: 2024/05/27 17:11:15 by mrazanad         ###   ########.fr       */
+/*   Updated: 2024/06/10 10:54:18 by mrazanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ char	**split_input(int argc, char **argv)
 
 	split = NULL;
 	if (argc == 2)
-	{
 		split = ft_split(argv[1], ' ');
-	}
 	else if (argc > 2)
 	{
 		split = malloc(sizeof(char *) * argc);

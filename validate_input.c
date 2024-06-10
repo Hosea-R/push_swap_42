@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-int copy_and_validate_args(int argc, char **argv, char **split)
+int	copy_and_validate_args(int argc, char **argv, char **split)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	while (i < argc)
@@ -39,11 +39,11 @@ int copy_and_validate_args(int argc, char **argv, char **split)
 	return (1);
 }
 
-char **create_result(char **split)
+char	**create_result(char **split)
 {
-	int count;
-	char **result;
-	int i;
+	int		count;
+	char	**result;
+	int		i;
 
 	count = 0;
 	while (split[count])
@@ -65,9 +65,9 @@ char **create_result(char **split)
 	return (result);
 }
 
-int count_strings(char **split)
+int	count_strings(char **split)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (split[count])
@@ -75,9 +75,9 @@ int count_strings(char **split)
 	return (count);
 }
 
-int validate_arguments(char **split)
+int	validate_arguments(char **split)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (split[i])
@@ -89,12 +89,13 @@ int validate_arguments(char **split)
 	return (1);
 }
 
-char **validate_and_split_input(int argc, char **argv)
+char	**validate_and_split_input(int argc, char **argv)
 {
-	char **split;
+	char	**split;
 
 	split = split_input(argc, argv);
-	if (!split || contains_duplicates(split, count_strings(split)) || !validate_arguments(split))
+	if (!split || contains_duplicates(split, count_strings(split))
+		|| !validate_arguments(split))
 	{
 		free_split(split);
 		return (NULL);
