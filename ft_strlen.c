@@ -6,7 +6,7 @@
 /*   By: mrazanad <mrazanad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 09:41:54 by mrazanad          #+#    #+#             */
-/*   Updated: 2024/06/10 10:54:33 by mrazanad         ###   ########.fr       */
+/*   Updated: 2024/06/17 11:34:21 by mrazanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ size_t	ft_strlen(const char *s)
 
 	i = 0;
 	while (s[i] != '\0')
-	{
 		i++;
-	}
 	return (i);
 }

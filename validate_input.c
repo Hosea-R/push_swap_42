@@ -6,7 +6,7 @@
 /*   By: mrazanad <mrazanad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 09:41:40 by mrazanad          #+#    #+#             */
-/*   Updated: 2024/06/10 08:56:17 by mrazanad         ###   ########.fr       */
+/*   Updated: 2024/06/18 11:14:23 by mrazanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,19 @@ int	validate_arguments(char **split)
 char	**validate_and_split_input(int argc, char **argv)
 {
 	char	**split;
+	int		i;
 
+	i = 0;
+	if (argc == 2)
+	{
+		while (argv[1][i] == ' ' && argv[1][i])
+			i++;
+		if (argv[1][i] == '\0' || argv[1][0] == '\0')
+		{
+			write(1, "Error\n", 6);
+			exit(1);
+		}
+	}
 	split = split_input(argc, argv);
 	if (!split || contains_duplicates(split, count_strings(split))
 		|| !validate_arguments(split))

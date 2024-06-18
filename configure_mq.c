@@ -12,8 +12,7 @@
 
 #include "push_swap.h"
 
-int	configure_mq(t_mediane_quartile *mediane_quartile,
-		char **input, int length)
+int	configure_mq(t_mediane_quartile *mediane_quartile, char **input, int length)
 {
 	int	*int_array;
 

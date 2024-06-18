@@ -6,7 +6,7 @@
 /*   By: mrazanad <mrazanad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 09:41:23 by mrazanad          #+#    #+#             */
-/*   Updated: 2024/06/10 10:55:09 by mrazanad         ###   ########.fr       */
+/*   Updated: 2024/06/18 11:16:09 by mrazanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,14 @@ int	is_valid_number(const char *str)
 {
 	if (!str || !*str)
 		return (0);
+	if (*str == '-' || *str == '+')
+		str++;
+	if (!ft_isdigit(*str))
+		return (0);
 	while (*str)
 	{
-		if (!(ft_isdigit(*str)) && *str != '-' && *str != '+')
+		if (!ft_isdigit(*str))
 			return (0);
-		if ((*str == '-' || *str == '+'))
-		{
-			str++;
-			if (!ft_isdigit(*str))
-				return (0);
-		}
 		str++;
 	}
 	return (1);
@@ -69,21 +67,35 @@ int	is_valid_number(const char *str)
 
 int	contains_duplicates(char **arr, int len)
 {
+	int	*values;
 	int	i;
 	int	j;
 
+	values = (int *)malloc(len * sizeof(int));
+	if (!values)
+		return (1);
+	i = 0;
+	while (i < len)
+	{
+		values[i] = ft_atoi(arr[i]);
+		i++;
+	}
 	i = 0;
 	while (i < len)
 	{
 		j = i + 1;
 		while (j < len)
 		{
-			if (ft_strcmp(arr[i], arr[j]) == 0)
+			if (values[i] == values[j])
+			{
+				free(values);
 				return (1);
+			}
 			j++;
 		}
 		i++;
 	}
+	free(values);
 	return (0);
 }
 

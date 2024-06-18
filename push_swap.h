@@ -6,7 +6,7 @@
 /*   By: mrazanad <mrazanad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 09:48:39 by mrazanad          #+#    #+#             */
-/*   Updated: 2024/06/10 10:54:38 by mrazanad         ###   ########.fr       */
+/*   Updated: 2024/06/18 11:03:35 by mrazanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,8 @@ void					free_all(t_pile **stack_a, t_pile **stack_b,
 							t_mediane_quartile **mediane_quartile);
 
 // mediane && quartile
-void					put_mq(t_mediane_quartile **mediane_quartile,
-							int length, int array[]);
+void					put_mq(t_mediane_quartile **med_quar, int length,
+							int array[]);
 
 // utils_algo
 int						get_best_move(t_pile *stack_a, t_pile *stack_b);
